@@ -12,7 +12,7 @@ Mixes a composition of three sine waves with a pulse signal and then adds some n
 Mixes and separates real radio broadcasts. There are three clips which were mixed together three times, one for each receiver.
 
 - `receiver1.wav`: all three WAVs mixed equally
-- `receiver2.wav`: no changes were made to cowbells, horse races were delayed by 20ms and the volume was reduced by -10dB, interview delayed by 40ms and volume reduces by -20dB
+- `receiver2.wav`: no changes were made to cowbells, horse races were delayed by 20ms and the volume was reduced by -10dB, interview delayed by 40ms and volume reduced by -20dB
 - `receiver3.wav`: cowbells were delayed by 40ms and volume reduced by -20dB, horse races were delayed by 20ms and the volume was reduced by -10dB, no changed so the interview clip.
 
 
