@@ -1,6 +1,7 @@
 # Independent Component Analysis (ICA) demo
 
 This project demonstrates how Independent Component Analysis [ICA](https://en.wikipedia.org/wiki/Independent_component_analysis) works using Python and [scikit-learn](https://scikit-learn.org/stable/). 
+Companion blog post for this repository: https://blog.georgovassilis.com/2025/08/20/ica-demo/
 
 ## Synthetic signals demo
 Mixes a composition of three sine waves with a pulse signal and then adds some noise. Two versions with different amplitudes and delays are mixed for the two receivers. Last, the two recordings are fed into ICA which reconstructs the original signals.
