@@ -13,7 +13,7 @@ Mixes and separates real radio broadcasts. There are three clips which were mixe
 
 - `receiver1.wav`: all three WAVs mixed equally
 - `receiver2.wav`: no changes were made to cowbells, horse races were delayed by 20ms and the volume was reduced by -10dB, interview delayed by 40ms and volume reduced by -20dB
-- `receiver3.wav`: cowbells were delayed by 40ms and volume reduced by -20dB, horse races were delayed by 20ms and the volume was reduced by -10dB, no changed so the interview clip.
+- `receiver3.wav`: cowbells were delayed by 40ms and volume reduced by -20dB, horse races was delayed by 20ms and the volume was reduced by -10dB, no changes to the interview clip.
 
 
 ![Real signals](docs/ica_demo_real_signals.png)
