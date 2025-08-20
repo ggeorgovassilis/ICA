@@ -37,7 +37,7 @@ ICA is an algorithm that isolates signals from signal mix, as long as you have a
    # or
    python ica_demo_real_signals.py
    ```
-Both demos save their charts as PNGs in the same folder. The real signals demo saves the reconstructed signal `audio/reconstructed`.
+Both demos save their charts as PNGs in the same folder. The real signals demo saves the reconstructed signal in `audio/reconstructed`.
 
 ## Results and discussion
 
