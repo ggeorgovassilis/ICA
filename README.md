@@ -47,6 +47,8 @@ The composite sine wave of the synthetic signal is reconstructed fairly well. Th
 
 Overall, ICA isolates the source signals well. While it's not visible in the chart, the reconstructed audio clips show that long streaks of silence are filled with sound from the other signals, eg. the first two seconds of [reconstructed_source_3.wav](audio/reconstructed/reconstructed_source_3.wav)
 
+All reconstructed recordings can be listened to in [audio/reconstructed](audio/reconstructed/)
+
 ## Licenses and Credits
 - Interview: Brennan, Jennifer, and Donald Brennan. [Library of Congress](https://www.loc.gov/item/afc911000148/)
 - Cowbells, Horse race: BBC, [BBC Sound Effects](https://sound-effects.bbcrewind.co.uk/licensing)
