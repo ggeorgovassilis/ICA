@@ -1,23 +1,27 @@
-# Independent Component Analysis (ICA) Demo
+# Independent Component Analysis (ICA) demo
 
-This project demonstrates Independent Component Analysis [ICA](https://en.wikipedia.org/wiki/Independent_component_analysis) using Python and [scikit-learn](https://scikit-learn.org/stable/). It generates synthetic signals, mixes them, and then uses ICA to recover the original sources.
+This project demonstrates how Independent Component Analysis [ICA](https://en.wikipedia.org/wiki/Independent_component_analysis) works using Python and [scikit-learn](https://scikit-learn.org/stable/). 
 
-# Why is this interesting?
+## Synthetic signals demo
+Mixes a composition of three sine waves with a pulse signal and then adds some noise. Two versions with different amplitudes and delays are mixed for the two receivers. Last, the two recordings are fed into ICA which reconstructs the original signals.
 
-I always wondered how a radio can tell stations which transmit on the same frequency apart. ICA is an algorithm that can isolate signals from a mix of signals, as long as there are multiple (at least 2) "observers" who receive different mixtures of those signals. Imagine two antennas 
+![Simple signals](docs/ica_demo_simple_signals.png)
 
-## Features
-- Generates two source signals (one is a sum of sinusoids, the other is a square wave)
-- Mixes the sources into observed signals
-- Applies ICA to separate the mixed signals
-- Plots and saves the results, matching colors for true and estimated sources
+## Radio recordings demo
+Mixes and separates real radio broadcasts. There are three clips which were mixed together three times, one for each receiver.
 
-## Requirements
-- Python 3.7+
-- See `requirements.txt` for required packages
+- `receiver1.wav`: all three WAVs mixed equally
+- `receiver2.wav`: no changes were made to cowbells, horse races were delayed by 20ms and the volume was reduced by -10dB, interview delayed by 40ms and volume reduces by -20dB
+- `receiver3.wav`: cowbells were delayed by 40ms and volume reduced by -20dB, horse races were delayed by 20ms and the volume was reduced by -10dB, no changed so the interview clip.
 
-## Setup
-1. (Recommended) Create and activate a virtual environment:
+
+![Real signals](docs/ica_demo_real_signals.png)
+
+## What is ICA?
+ICA is an algorithm that isolates signals from signal mix, as long as you have at least as many mixed signals as sources. For example, two antennas at different locations pick up two radio stations broadcasting on the same frequency. Each antenna receives a different mix. ICA can separate the original broadcasts.
+
+## Running the demos
+1. Create and activate a virtual environment:
    ```bash
    python3 -m venv venv
    source venv/bin/activate
@@ -26,31 +30,24 @@ I always wondered how a radio can tell stations which transmit on the same frequ
    ```bash
    pip install -r requirements.txt
    ```
+3. Run a demo:
+   ```bash
+   python ica_demo_simple_signals.py
+   # or
+   python ica_demo_real_signals.py
+   ```
+Both demos save their charts as PNGs in the same folder. The real signals demo saves the reconstructed signal `audio/reconstructed`.
 
-## Usage
-Run the demo script:
-```bash
-python ica_demo.py
-```
-This will generate an `ica_results.png` file with the plots.
+## Results and discussion
 
-## Notes
-- The script automatically matches the colors of the true and estimated sources for easier visual comparison.
-- The virtual environment directory `venv/` is excluded from version control via `.gitignore`.
+### Synthetic signal
+The composite sine wave of the synthetic signal is reconstructed fairly well. The pulse signal is reconstructed in principle, the base frequency and phase are correct, but the pulse is slightly deformed.
 
-## Real sounds
+### Radio recordings
 
-receiver1.wav all three WAVs mixed equally
-receiver2.wav cowbells default, horse races 20ms delay -10db, interview 40ms delay -26db
-receiver3.wav cowbells -10db 40ms, horse races -20db 20ms, interview default
+Overall, ICA isolates the source signals well. While it's not visible in the chart, the reconstructed audio clips show that long streaks of silence are filled with sound from the other signals, eg. the first two seconds of [reconstructed_source_3.wav](audio/reconstructed/reconstructed_source_3.wav)
 
-## Credits and licenses
-
-Brennan, Jennifer, and Donald Brennan. Interview with Donald Brennan, Stafford, Virginia,part 1 of 2. 2001. Audio. https://www.loc.gov/item/afc911000148/.
-
-Cowbells, Horse race audio
-bbc.co.uk – © copyright 2025 BBC
-https://sound-effects.bbcrewind.co.uk/licensing
-
-Code and documentation MIT license
-https://opensource.org/license/mit
+## Licenses and Credits
+- Interview: Brennan, Jennifer, and Donald Brennan. [Library of Congress](https://www.loc.gov/item/afc911000148/)
+- Cowbells, Horse race: BBC, [BBC Sound Effects](https://sound-effects.bbcrewind.co.uk/licensing)
+- Code: MIT License

@@ -46,7 +46,6 @@ for i, (model, name) in enumerate(zip(models, names), 1):
     if name == 'True Sources':
         for idx, sig in enumerate(model.T):
             plt.plot(sig, color=colors[idx % len(colors)])
-            break
     elif name == 'ICA estimated sources':
         # Plot estimated sources in the order that best matches the true sources
         for idx, true_idx in enumerate(matching):
@@ -55,4 +54,4 @@ for i, (model, name) in enumerate(zip(models, names), 1):
         for sig in model.T:
             plt.plot(sig)
 plt.tight_layout()
-plt.savefig("ica_simple_signals.png")
+plt.savefig("ica_demo_simple_signals.png")
